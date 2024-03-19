@@ -1,0 +1,10 @@
+body {
+    font-family: "Girassol", serif;
+    background-color: rgb(220, 189, 248);
+};
+
+.cards {
+    width: 100%;
+    display: inline-block;
+    margin: 0 auto;
+}
