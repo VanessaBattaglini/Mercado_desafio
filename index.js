@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const exphbs = require('express-handlebars');
+const path = require('path');
 const PORT = 3001;
 
 //Cofiguración de platilla
@@ -12,14 +13,14 @@ app.engine('hbs', exphbs.engine({
 
 //Ruta static con middlewares
 app.use(express.static('assets'));
-app.use('/bootstrap', express.static(__dirname +
-    '/node_modules/bootstrap/dist'));
+app.use('/bootstrap', express.static(
+    'node_modules/bootstrap/dist'));
 
 //Rutas
 app.get('/', (req, res) => {
-    res.render('market'), {
+    res.render('market', {
         products: ['banana', 'cebollas', 'pimenton', 'papas', 'lechuga', 'tomate']
-    }
+    })
 });
 
 
